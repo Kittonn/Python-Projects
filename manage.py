@@ -19,7 +19,6 @@ total_score = IntVar()
 total_grade = DoubleVar()
 total_unit = IntVar()
 
-
 def about():
     about_tp = Toplevel(main)
     about_tp.title('About')
