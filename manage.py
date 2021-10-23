@@ -700,26 +700,14 @@ def unit():
         else:
             con = mysql.connect(host = "localhost", user = "root",password = "12345678", database="grade_project")
             cursor = con.cursor()
-            cursor.execute("insert into unit_grade values ('"+ thai_e.get() +"', '"+ math_e.get() +"', '"+ sci_e.get() +"', '"+ soc_e.get() +"', '"+ eng_e.get() +"', '"+ phy_e.get() +"', '"+ bio_e.get() +"', '"+ chem_e.get() +"', '"+ art_e.get() +"', '"+ chinese_e.get() +"')")
+            cursor.execute("update unit_grade set unit_thai = '"+ thai_e.get() +"', unit_math = '"+ math_e.get() +"', unit_sci = '"+ sci_e.get() +"', unit_soc = '"+ soc_e.get() +"', unit_eng = '"+ eng_e.get() +"', unit_phy = '"+ phy_e.get() +"', unit_bio = '"+ bio_e.get() +"', unit_chem = '"+ chem_e.get() +"', unit_art = '"+ art_e.get() +"', unit_chinese = '"+ chinese_e.get() +"' where id = '"+ str(1) +"'")
+            
             cursor.execute('commit')
+            
             
             messagebox.showinfo('Set Unit Status', 'Set Unit Successfully')
             con.close()
             unit_tp.destroy()
-    
-    def update():
-        if ((thai_e.get() == '') or (math_e.get() == '') or (sci_e.get() == '') or (soc_e.get() == '') or (eng_e.get() == '') or
-            (phy_e.get() == '') or (bio_e.get() == '') or (chem_e.get() == '') or (art_e.get() == '') or (chinese_e.get() == '')):
-            messagebox.showinfo('Update Unit Status', 'All fields are empty.')
-            
-        else:
-            con = mysql.connect(host = "localhost", user = "root",password = "12345678", database="grade_project")
-            cursor = con.cursor()
-            #[บัคตรงนี้ มาแก้ด้วยยยยยยยย]
-            #cursor.execute("update unit_grade set unit_thai = '"+ thai_e.get() +"', unit_math = '"+ math_e.get() +"', unit_sci = '"+ sci_e.get() +"', unit_soc = '"+ soc_e.get() +"', unit_eng = '"+ eng_e.get()"', unit_phy = '"+ phy_e.get() +"', unit_bio = '"+ bio_e.get() +"', unit_chem = '"+ chem_e.get() +"', unit_art = '"+ art_e.get() +"', unit_chinese = '"+ chinese_e.get() +"' where id = '"+ str(1) +"'")
-            cursor.execute('commit')
-            messagebox.showinfo('Update Unit Status', 'Updated Unit Successfully')
-            con.close()
             show()
     
     unit_tp = Toplevel(main)
@@ -802,6 +790,18 @@ def unit():
     update_unit_btn = ttk.Button(unit_tp, text = 'Update',command = "")
     update_unit_btn.place(x = 550, y = 70, width = 130, height = 50)
     
+def select_tab_61(event = None):
+    ntb.select(m61_frm)
+
+def select_tab_62(event = None):
+    ntb.select(m62_frm)
+
+def select_tab_63(event = None):
+    ntb.select(m63_frm)
+
+def select_tab_64(event = None):
+    ntb.select(m64_frm)
+
 menubar = Menu(main)
 edit_menu = Menu(menubar, tearoff = 0)
 edit_menu.add_command(label = "Insert", command = insert)
@@ -813,10 +813,10 @@ edit_menu.add_command(label = 'Unit', command = unit)
 menubar.add_cascade(label = "Edit", menu = edit_menu)
 
 table_menu = Menu(menubar, tearoff = 0)
-table_menu.add_command(label = 'Matthayom 6/1')
-table_menu.add_command(label = 'Matthayom 6/2')
-table_menu.add_command(label = 'Matthayom 6/3')
-table_menu.add_command(label = 'Matthayom 6/4')
+table_menu.add_command(label = 'Matthayom 6/1', command = select_tab_61)
+table_menu.add_command(label = 'Matthayom 6/2', command = select_tab_62)
+table_menu.add_command(label = 'Matthayom 6/3', command = select_tab_63)
+table_menu.add_command(label = 'Matthayom 6/4', command = select_tab_64)
 menubar.add_cascade(label = 'Table', menu = table_menu)
 
 help_menu = Menu(menubar, tearoff = 0)
@@ -1186,4 +1186,9 @@ show_61()
 show_62()
 show_63()
 show_64()
+
+main.bind('<Control-q>', select_tab_61)
+main.bind('<Control-w>', select_tab_62)
+main.bind('<Control-e>', select_tab_63)
+main.bind('<Control-r>', select_tab_64)
 main.mainloop()
