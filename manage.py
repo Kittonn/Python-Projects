@@ -228,9 +228,9 @@ def insert():
 
     total_sc = int(thai_sc) + int(math_sc) + int(sci_sc) + int(soc_sc) + int(eng_sc) + int(phy_sc) + int(bio_sc) + int(chem_sc) + int(art_sc) + int(chinese_sc)
     
-    total_un = int(thai_unit) + int(math_unit) + int(sci_unit) + int(soc_unit) + int(eng_unit) + int(phy_unit) + int(bio_unit) + int(chem_unit) + int(art_unit) + int(chinese_unit)
+    total_un = float(thai_unit) + float(math_unit) + float(sci_unit) + float(soc_unit) + float(eng_unit) + float(phy_unit) + float(bio_unit) + float(chem_unit) + float(art_unit) + float(chinese_unit)
 
-    tot_sc_un = (float(math_gd) * int(math_unit)) + (float(thai_gd) * int(thai_unit)) + (float(sci_gd) * int(sci_unit)) + (float(soc_gd) * int(soc_unit)) + (float(eng_gd) * int(eng_unit)) + (float(phy_gd) * int(phy_unit)) + (float(bio_gd) * int(bio_unit)) + (float(chem_gd) * int(chem_unit)) + (float(art_gd) * int(art_unit)) + (float(chinese_gd) * int(chinese_unit))
+    tot_sc_un = (float(math_gd) * float(math_unit)) + (float(thai_gd) * float(thai_unit)) + (float(sci_gd) * float(sci_unit)) + (float(soc_gd) * float(soc_unit)) + (float(eng_gd) * float(eng_unit)) + (float(phy_gd) * float(phy_unit)) + (float(bio_gd) * float(bio_unit)) + (float(chem_gd) * float(chem_unit)) + (float(art_gd) * float(art_unit)) + (float(chinese_gd) * float(chinese_unit))
 
     tot_grade = '{:.2f}'.format(tot_sc_un / total_un)
 
@@ -251,6 +251,7 @@ def insert():
             clear()
             messagebox.showinfo('Insert Status', 'Inserted Successfully')
             con.close()
+            show_61()
         
         elif (class_cbb.get() == 'M.6/2'):
             con = mysql.connect(host = "localhost", user = "root",password = "12345678", database="grade_project")
@@ -260,6 +261,7 @@ def insert():
             clear()
             messagebox.showinfo('Insert Status', 'Inserted Successfully')
             con.close()
+            show_62()
         
         elif (class_cbb.get() == 'M.6/3'):
             con = mysql.connect(host = "localhost", user = "root",password = "12345678", database="grade_project")
@@ -269,6 +271,7 @@ def insert():
             clear()
             messagebox.showinfo('Insert Status', 'Inserted Successfully')
             con.close()
+            show_63()
 
         else:
             con = mysql.connect(host = "localhost", user = "root",password = "12345678", database="grade_project")
@@ -278,6 +281,7 @@ def insert():
             clear()
             messagebox.showinfo('Insert Status', 'Inserted Successfully')
             con.close()
+            show_64()
 
 def clear():
     title_cbb.set('')
@@ -322,6 +326,8 @@ def delete():
             clear()
             messagebox.showinfo('Delete Status', 'Delete Successfully')
             con.close()
+            show_61()
+
         elif (class_cbb.get() == 'M.6/2'):
             con = mysql.connect(host = "localhost", user = "root",password = "12345678", database="grade_project")
             cursor = con.cursor()
@@ -330,6 +336,7 @@ def delete():
             clear()
             messagebox.showinfo('Delete Status', 'Delete Successfully')
             con.close()
+            show_62()
 
         elif (class_cbb.get() == 'M.6/3'):
             con = mysql.connect(host = "localhost", user = "root",password = "12345678", database="grade_project")
@@ -339,6 +346,7 @@ def delete():
             clear()
             messagebox.showinfo('Delete Status', 'Delete Successfully')
             con.close()
+            show_63()
 
         else:
             con = mysql.connect(host = "localhost", user = "root",password = "12345678", database="grade_project")
@@ -348,6 +356,7 @@ def delete():
             clear()
             messagebox.showinfo('Delete Status', 'Delete Successfully')
             con.close()
+            show_64()
 
 def update():
     title = title_cbb.get()
@@ -551,9 +560,9 @@ def update():
 
     total_sc = int(thai_sc) + int(math_sc) + int(sci_sc) + int(soc_sc) + int(eng_sc) + int(phy_sc) + int(bio_sc) + int(chem_sc) + int(art_sc) + int(chinese_sc)
     
-    total_un = int(thai_unit) + int(math_unit) + int(sci_unit) + int(soc_unit) + int(eng_unit) + int(phy_unit) + int(bio_unit) + int(chem_unit) + int(art_unit) + int(chinese_unit)
+    total_un = float(thai_unit) + float(math_unit) + float(sci_unit) + float(soc_unit) + float(eng_unit) + float(phy_unit) + float(bio_unit) + float(chem_unit) + float(art_unit) + float(chinese_unit)
 
-    tot_sc_un = (float(math_gd) * int(math_unit)) + (float(thai_gd) * int(thai_unit)) + (float(sci_gd) * int(sci_unit)) + (float(soc_gd) * int(soc_unit)) + (float(eng_gd) * int(eng_unit)) + (float(phy_gd) * int(phy_unit)) + (float(bio_gd) * int(bio_unit)) + (float(chem_gd) * int(chem_unit)) + (float(art_gd) * int(art_unit)) + (float(chinese_gd) * int(chinese_unit))
+    tot_sc_un = (float(math_gd) * float(math_unit)) + (float(thai_gd) * float(thai_unit)) + (float(sci_gd) * float(sci_unit)) + (float(soc_gd) * float(soc_unit)) + (float(eng_gd) * float(eng_unit)) + (float(phy_gd) * float(phy_unit)) + (float(bio_gd) * float(bio_unit)) + (float(chem_gd) * float(chem_unit)) + (float(art_gd) * float(art_unit)) + (float(chinese_gd) * float(chinese_unit))
 
     tot_grade = '{:.2f}'.format(tot_sc_un / total_un)
 
@@ -574,6 +583,7 @@ def update():
             clear()
             messagebox.showinfo('Update Status', 'Update Successfully')
             con.close()
+            show_61()
 
         elif (class_cbb.get() == 'M.6/2'):
             con = mysql.connect(host = "localhost", user = "root",password = "12345678", database="grade_project")
@@ -583,6 +593,7 @@ def update():
             clear()
             messagebox.showinfo('Update Status', 'Update Successfully')
             con.close()
+            show_62()
 
         elif (class_cbb.get() == 'M.6/3'):
             con = mysql.connect(host = "localhost", user = "root",password = "12345678", database="grade_project")
@@ -592,6 +603,7 @@ def update():
             clear()
             messagebox.showinfo('Update Status', 'Update Successfully')
             con.close()
+            show_63()
 
         else:
             con = mysql.connect(host = "localhost", user = "root",password = "12345678", database="grade_project")
@@ -601,12 +613,14 @@ def update():
             clear()
             messagebox.showinfo('Update Status', 'Update Successfully')
             con.close()
+            show_64()
 
 def show():
     con = mysql.connect(host = "localhost", user = "root",password = "12345678", database="grade_project")
     cursor = con.cursor()
     cursor.execute("select * from unit_grade")
     datas = cursor.fetchall()
+
     for data in datas:
         u_thai_txt.set(data[0])
         u_math_txt.set(data[1])
@@ -622,14 +636,58 @@ def show():
     con.close()
 
 def show_61():
+    for c in listBox.get_children():
+        listBox.delete(c)
+
     con = mysql.connect(host = "localhost", user = "root",password = "12345678", database="grade_project")
     cursor = con.cursor()
-    cursor.execute('select * from score_table')
+    cursor.execute('select number, total_name, section, total_score, grade, thai, math, sci, soc, eng, phy, bio, chem, art, chinese from score_table')
     rows =  cursor.fetchall()
 
-    
     for row in rows:
-        listBox.insert()
+        listBox.insert('', 'end', value = row)
+
+    con.close()
+
+def show_62():
+    for c in listBox_2.get_children():
+        listBox.delete(c)
+
+    con = mysql.connect(host = "localhost", user = "root",password = "12345678", database="grade_project")
+    cursor = con.cursor()
+    cursor.execute('select number, total_name, section, total_score, grade, thai, math, sci, soc, eng, phy, bio, chem, art, chinese from score_table_62')
+    rows =  cursor.fetchall()
+
+    for row in rows:
+        listBox_2.insert('', 'end', value = row)
+
+    con.close()
+
+def show_63():
+    for c in listBox_3.get_children():
+        listBox.delete(c)
+
+    con = mysql.connect(host = "localhost", user = "root",password = "12345678", database="grade_project")
+    cursor = con.cursor()
+    cursor.execute('select number, total_name, section, total_score, grade, thai, math, sci, soc, eng, phy, bio, chem, art, chinese from score_table_63')
+    rows =  cursor.fetchall()
+
+    for row in rows:
+        listBox_3.insert('', 'end', value = row)
+
+    con.close()
+
+def show_64():
+    for c in listBox_4.get_children():
+        listBox.delete(c)
+
+    con = mysql.connect(host = "localhost", user = "root",password = "12345678", database="grade_project")
+    cursor = con.cursor()
+    cursor.execute('select number, total_name, section, total_score, grade, thai, math, sci, soc, eng, phy, bio, chem, art, chinese from score_table_64')
+    rows =  cursor.fetchall()
+
+    for row in rows:
+        listBox_4.insert('', 'end', value = row)
 
     con.close()
 
@@ -657,8 +715,12 @@ def unit():
         else:
             con = mysql.connect(host = "localhost", user = "root",password = "12345678", database="grade_project")
             cursor = con.cursor()
-            cursor.execute('')
+            #[บัคตรงนี้ มาแก้ด้วยยยยยยยย]
+            #cursor.execute("update unit_grade set unit_thai = '"+ thai_e.get() +"', unit_math = '"+ math_e.get() +"', unit_sci = '"+ sci_e.get() +"', unit_soc = '"+ soc_e.get() +"', unit_eng = '"+ eng_e.get()"', unit_phy = '"+ phy_e.get() +"', unit_bio = '"+ bio_e.get() +"', unit_chem = '"+ chem_e.get() +"', unit_art = '"+ art_e.get() +"', unit_chinese = '"+ chinese_e.get() +"' where id = '"+ str(1) +"'")
+            cursor.execute('commit')
+            messagebox.showinfo('Update Unit Status', 'Updated Unit Successfully')
             con.close()
+            show()
     
     unit_tp = Toplevel(main)
     unit_tp.title('Set Unit')
@@ -742,9 +804,9 @@ def unit():
     
 menubar = Menu(main)
 edit_menu = Menu(menubar, tearoff = 0)
-edit_menu.add_command(label = "Insert")
-edit_menu.add_command(label = "Delete")
-edit_menu.add_command(label = "Update")
+edit_menu.add_command(label = "Insert", command = insert)
+edit_menu.add_command(label = "Delete", command = delete)
+edit_menu.add_command(label = "Update", command = update)
 edit_menu.add_command(label = "Clear", command = clear)
 edit_menu.add_separator()
 edit_menu.add_command(label = 'Unit', command = unit)
@@ -1121,4 +1183,7 @@ u_chinese_ent.config(state = 'disabled')
 main.config(menu = menubar)
 show()
 show_61()
+show_62()
+show_63()
+show_64()
 main.mainloop()
