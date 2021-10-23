@@ -566,13 +566,41 @@ def update():
         clear()
         
     else:
-        con = mysql.connect(host = "localhost", user = "root",password = "12345678", database="grade_project")
-        cursor = con.cursor()
-        cursor.execute("update score_table set title = '"+ title +"', name = '"+ name +"', surname = '"+ surname +"', section = '"+ section +"', total_name = '"+ total_name +"', grade = '"+ tot_grade +"', total_score = '"+ str(total_sc) +"', thai = '"+ thai_sc +"', math = '"+ math_sc +"', sci = '"+ sci_sc +"', soc = '"+ soc_sc +"', eng = '"+ eng_sc +"', phy = '"+ phy_sc +"', bio = '"+ bio_sc +"', chem = '"+ chem_sc +"', art = '"+ art_sc +"', chinese = '"+ chinese_sc +"' where number = '"+ number +"'")
-        cursor.execute('commit')
-        clear()
-        messagebox.showinfo('Update Status', 'Update Successfully')
-        con.close()
+        if (class_cbb.get() == 'M.6/1'):
+            con = mysql.connect(host = "localhost", user = "root",password = "12345678", database="grade_project")
+            cursor = con.cursor()
+            cursor.execute("update score_table set title = '"+ title +"', name = '"+ name +"', surname = '"+ surname +"', section = '"+ section +"', total_name = '"+ total_name +"', grade = '"+ tot_grade +"', total_score = '"+ str(total_sc) +"', thai = '"+ thai_sc +"', math = '"+ math_sc +"', sci = '"+ sci_sc +"', soc = '"+ soc_sc +"', eng = '"+ eng_sc +"', phy = '"+ phy_sc +"', bio = '"+ bio_sc +"', chem = '"+ chem_sc +"', art = '"+ art_sc +"', chinese = '"+ chinese_sc +"' where number = '"+ number +"'")
+            cursor.execute('commit')
+            clear()
+            messagebox.showinfo('Update Status', 'Update Successfully')
+            con.close()
+
+        elif (class_cbb.get() == 'M.6/2'):
+            con = mysql.connect(host = "localhost", user = "root",password = "12345678", database="grade_project")
+            cursor = con.cursor()
+            cursor.execute("update score_table_62 set title = '"+ title +"', name = '"+ name +"', surname = '"+ surname +"', section = '"+ section +"', total_name = '"+ total_name +"', grade = '"+ tot_grade +"', total_score = '"+ str(total_sc) +"', thai = '"+ thai_sc +"', math = '"+ math_sc +"', sci = '"+ sci_sc +"', soc = '"+ soc_sc +"', eng = '"+ eng_sc +"', phy = '"+ phy_sc +"', bio = '"+ bio_sc +"', chem = '"+ chem_sc +"', art = '"+ art_sc +"', chinese = '"+ chinese_sc +"' where number = '"+ number +"'")
+            cursor.execute('commit')
+            clear()
+            messagebox.showinfo('Update Status', 'Update Successfully')
+            con.close()
+
+        elif (class_cbb.get() == 'M.6/3'):
+            con = mysql.connect(host = "localhost", user = "root",password = "12345678", database="grade_project")
+            cursor = con.cursor()
+            cursor.execute("update score_table_63 set title = '"+ title +"', name = '"+ name +"', surname = '"+ surname +"', section = '"+ section +"', total_name = '"+ total_name +"', grade = '"+ tot_grade +"', total_score = '"+ str(total_sc) +"', thai = '"+ thai_sc +"', math = '"+ math_sc +"', sci = '"+ sci_sc +"', soc = '"+ soc_sc +"', eng = '"+ eng_sc +"', phy = '"+ phy_sc +"', bio = '"+ bio_sc +"', chem = '"+ chem_sc +"', art = '"+ art_sc +"', chinese = '"+ chinese_sc +"' where number = '"+ number +"'")
+            cursor.execute('commit')
+            clear()
+            messagebox.showinfo('Update Status', 'Update Successfully')
+            con.close()
+
+        else:
+            con = mysql.connect(host = "localhost", user = "root",password = "12345678", database="grade_project")
+            cursor = con.cursor()
+            cursor.execute("update score_table_64 set title = '"+ title +"', name = '"+ name +"', surname = '"+ surname +"', section = '"+ section +"', total_name = '"+ total_name +"', grade = '"+ tot_grade +"', total_score = '"+ str(total_sc) +"', thai = '"+ thai_sc +"', math = '"+ math_sc +"', sci = '"+ sci_sc +"', soc = '"+ soc_sc +"', eng = '"+ eng_sc +"', phy = '"+ phy_sc +"', bio = '"+ bio_sc +"', chem = '"+ chem_sc +"', art = '"+ art_sc +"', chinese = '"+ chinese_sc +"' where number = '"+ number +"'")
+            cursor.execute('commit')
+            clear()
+            messagebox.showinfo('Update Status', 'Update Successfully')
+            con.close()
 
 def show():
     con = mysql.connect(host = "localhost", user = "root",password = "12345678", database="grade_project")
@@ -590,6 +618,16 @@ def show():
         u_chem_txt.set(data[7])
         u_art_txt.set(data[8])
         u_chinese_txt.set(data[9])
+
+    con.close()
+
+def show_61():
+    con = mysql.connect(host = "localhost", user = "root",password = "12345678", database="grade_project")
+    cursor = con.cursor()
+    cursor.execute('select * from score_table')
+    rows =  cursor.fetchall()
+
+    listBox.insert('', 'end', value = rows[])
 
     con.close()
 
@@ -1049,7 +1087,7 @@ listBox_4.configure(xscrollcommand = listBox_4_h_scb.set)
 for i in range(20):
     listBox.insert('','end',values = test_value)'''
 
-name_total_score_lbl = ttk.Label(main, text = "Total Score :")
+'''name_total_score_lbl = ttk.Label(main, text = "Total Score :")
 name_total_score_lbl.place(x = 10, y = 250)
 
 name_total_unit_lbl = ttk.Label(main, text = "Total Unit :")
@@ -1065,7 +1103,7 @@ total_unti_lbl = ttk.Label(main, textvariable = total_unit)
 total_unti_lbl.place(x = 100, y = 310)
 
 total_grade_lbl = ttk.Label(main, textvariable = total_grade)
-total_grade_lbl.place(x = 100, y = 370)
+total_grade_lbl.place(x = 100, y = 370)'''
 
 u_thai_ent.config(state = 'disabled')
 u_math_ent.config(state = 'disabled')
