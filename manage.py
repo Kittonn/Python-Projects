@@ -627,7 +627,9 @@ def show_61():
     cursor.execute('select * from score_table')
     rows =  cursor.fetchall()
 
-    listBox.insert('', 'end', value = rows[])
+    
+    for row in rows:
+        listBox.insert()
 
     con.close()
 
@@ -1118,4 +1120,5 @@ u_chinese_ent.config(state = 'disabled')
 
 main.config(menu = menubar)
 show()
+show_61()
 main.mainloop()
