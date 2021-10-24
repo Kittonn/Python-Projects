@@ -242,6 +242,10 @@ def insert():
         messagebox.showinfo('Insert Status', 'All field are empty.')
         clear()
 
+    elif ( (int(thai_sc) > 100 or int(thai_sc) < 0)  or (int(math_sc) > 100 or int(math_sc) < 0) or (int(sci_sc) > 100 or int(sci_sc) < 0) or (int(eng_sc) > 100 or int(eng_sc) < 0) or (int(soc_sc) > 100 or int(soc_sc) < 0) or
+        (int(phy_sc) > 100 or int(phy_sc) < 0) or (int(bio_sc) > 100 or int(bio_sc) < 0) or (int(chem_sc) > 100 or int(chem_sc) < 0) or (int(art_sc) > 100 or int(art_sc) < 0) or (int(chinese_sc) > 100 or int(chinese_sc) < 0)):
+        messagebox.showinfo('Insert Status', 'Please check data is you enter.')
+
     else:
         if (class_cbb.get() == 'M.6/1'):
             con = mysql.connect(host = "localhost", user = "root",password = "12345678", database="grade_project")
@@ -573,6 +577,10 @@ def update():
         (u_phy_ent.get() == '') or (u_bio_ent.get() == '') or (u_chem_ent.get() == '') or (u_art_ent.get() == '') or (u_chinese_ent.get() == '')):
         messagebox.showinfo('Update Status', 'All fields are empty.')
         clear()
+    
+    elif ( (int(thai_sc) > 100 or int(thai_sc) < 0)  or (int(math_sc) > 100 or int(math_sc) < 0) or (int(sci_sc) > 100 or int(sci_sc) < 0) or (int(eng_sc) > 100 or int(eng_sc) < 0) or (int(soc_sc) > 100 or int(soc_sc) < 0) or
+        (int(phy_sc) > 100 or int(phy_sc) < 0) or (int(bio_sc) > 100 or int(bio_sc) < 0) or (int(chem_sc) > 100 or int(chem_sc) < 0) or (int(art_sc) > 100 or int(art_sc) < 0) or (int(chinese_sc) > 100 or int(chinese_sc) < 0)):
+        messagebox.showinfo('Insert Status', 'Please check data is you enter.')
         
     else:
         if (class_cbb.get() == 'M.6/1'):
@@ -813,10 +821,10 @@ edit_menu.add_command(label = 'Unit', command = unit)
 menubar.add_cascade(label = "Edit", menu = edit_menu)
 
 table_menu = Menu(menubar, tearoff = 0)
-table_menu.add_command(label = 'Matthayom 6/1', command = select_tab_61)
-table_menu.add_command(label = 'Matthayom 6/2', command = select_tab_62)
-table_menu.add_command(label = 'Matthayom 6/3', command = select_tab_63)
-table_menu.add_command(label = 'Matthayom 6/4', command = select_tab_64)
+table_menu.add_command(label = 'Matthayom 6/1', accelerator = 'F1', command = select_tab_61)
+table_menu.add_command(label = 'Matthayom 6/2', accelerator = 'F2', command = select_tab_62)
+table_menu.add_command(label = 'Matthayom 6/3', accelerator = 'F3', command = select_tab_63)
+table_menu.add_command(label = 'Matthayom 6/4', accelerator = 'F4', command = select_tab_64)
 menubar.add_cascade(label = 'Table', menu = table_menu)
 
 help_menu = Menu(menubar, tearoff = 0)
@@ -1187,8 +1195,9 @@ show_62()
 show_63()
 show_64()
 
-main.bind('<Control-q>', select_tab_61)
-main.bind('<Control-w>', select_tab_62)
-main.bind('<Control-e>', select_tab_63)
-main.bind('<Control-r>', select_tab_64)
+main.bind('<F1>', select_tab_61)
+main.bind('<F2>', select_tab_62)
+main.bind('<F3>', select_tab_63)
+main.bind('<F4>', select_tab_64)
+
 main.mainloop()
