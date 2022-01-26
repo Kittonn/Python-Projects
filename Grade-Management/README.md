@@ -1,10 +1,10 @@
-<h1>GRADE MANAGEMENT <img src="https://img.icons8.com/color/32/000000/program.png"/></h1>
+<h1>GRADE MANAGEMENT <img src="https://img.icons8.com/color/40/000000/program.png"/></h1>
 
 <p align="center">
 <i>โปรแกรมคำนวณเกรด เชื่อมต่อฐานข้อมูล ได้รับแรงบันดาลใจจากการเรียนวิชา คณิตศาสตร์</i>
 </p>
  
-<h2>Language & Tools <img src="https://img.icons8.com/color/32/000000/source-code.png"/></h2>
+<h2>Language & Tools <img src="https://img.icons8.com/color/40/000000/source-code.png"/></h2>
 <a href="#" target="_blank">
     <img src="https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=white">
   </a> 
@@ -17,7 +17,7 @@
 
 
 
-<h2>Contact me <img src="https://img.icons8.com/color/48/000000/user-male-circle--v2.png" width=32px /></h2>
+<h2>Contact me <img src="https://img.icons8.com/color/40/000000/user-male-circle--v2.png"  /></h2>
 <a href="https://gitlab.com/lnwtxn" target="_blank">
     <img alt="Gitlab" src="https://img.shields.io/badge/GitLab-330F63?style=for-the-badge&logo=gitlab&logoColor=white">
   </a> 
