@@ -5,9 +5,16 @@
 </p>
  
 <h2>Language & Tools</h2>
-<a><img src="https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=white"/></a>
-<a><img src="https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white"/></a>
-<a><img src="https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white"/></a>
+<a href="#" target="_blank">
+    <img src="https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=white">
+  </a> 
+<a href="#" target="_blank">
+    <img src="https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white">
+  </a>   
+   <a href="#" target="_blank">
+    <img src="https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white">
+  </a> 
+
 
 
 <h2>Contact me </h2>
