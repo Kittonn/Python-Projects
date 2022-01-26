@@ -1,0 +1,3 @@
+https://raw.githubusercontent.com/kongvut/thai-province-data/master/api_amphure.json
+
+https://raw.githubusercontent.com/kongvut/thai-province-data/master/api_province.json
